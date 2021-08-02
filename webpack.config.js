@@ -5,14 +5,22 @@ const NodemonPlugin = require('nodemon-webpack-plugin')
 
 module.exports = {
     entry: './index.js',
+    mode: 'production',
     output: {
-        filename: "bundle.js",
+        filename: "server.js",
         path: path.resolve(__dirname, 'build')
     },
     module: {
         rules: [
             {
-                test: /\.js$/, use: 'babel-loader'
+                test: /\.js$/, 
+                use: {
+                    loader: 'babel-loader',
+                    options: {
+                        presets: ['@babel/preset-env'],
+                        plugins: ['@babel/plugin-transform-runtime']
+                    }
+                }
             }
         ]
     },
@@ -22,5 +30,6 @@ module.exports = {
     },
     plugins: [
         new NodemonPlugin()
-    ]
+    ],
+    devtool: 'source-map'
 }

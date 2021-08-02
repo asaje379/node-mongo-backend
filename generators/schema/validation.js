@@ -19,7 +19,7 @@ let defaultEmailSchema = {
 // default password schema
 let defaultPasswordSchema = {
     type: String,
-    match: /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
+    match: /.{4,}/
 }
 
 // Mongoose default validations

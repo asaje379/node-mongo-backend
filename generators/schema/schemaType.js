@@ -7,6 +7,6 @@ global.File = 'File'; // Store file but it uploadUrl in mongo db,
 global.Date = Date;
 global.Number = Number;
 global.Boolean = Boolean;
-global.ObjectID = mongoose.Types.ObjectId;
+global.ObjectId = mongoose.Types.ObjectId;
 
 export default {}; 
